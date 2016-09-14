@@ -1,0 +1,10 @@
+cat > temp.sh >>EOF
+pip install boto
+python PythonLearnings/AWS_EC2_Instance.py
+EOF
+sudo docker run -v `pwd`:/PythonLearnings python bash /PythonLearnings/temp.sh
+
+####`pwd`:/PythonLearnings######
+##'pwd'---- Mounted pwd so that docker can identify all the files from the folder
+##PythonLearnings folder is the folder created in docker instance mounted from "pwd"
+## -v command is for mounting
